@@ -4,11 +4,16 @@ public class ContaBancaria {
     String agencia, conta, proprietario;
     double saldo;
 
-    void depositar() {
-
+    void depositar(double valor) {
+        this.saldo += valor;
     }
 
-    void sacar() {
+    void sacar(double valor) {
+        if(valor > saldo) {
+            System.out.print("Saldo indisponivel \n");
+        } else {
+            this.saldo -= valor;
+        }
 
     }
 
@@ -17,8 +22,6 @@ public class ContaBancaria {
     }
 
     String consultarSaldo() {
-        return "";
+        return String.format("Seu saldo é: R$ %.2f", this.saldo);
     }
-
-
 }

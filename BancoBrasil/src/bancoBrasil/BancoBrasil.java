@@ -8,13 +8,24 @@ public class BancoBrasil {
         ContaBancaria contaBancaria1 = new ContaBancaria();
         ContaBancaria contaBancaria2 = new ContaBancaria();
 
-        contaBancaria1.agencia = "0001";
-        contaBancaria1.conta = "12345";
-        contaBancaria1.proprietario = "Rodrigo";
-        contaBancaria1.saldo = 1.99;
-
-        //System.out.println(contaBancaria1.agencia + " " + contaBancaria1.conta + " " + contaBancaria1.proprietario + " " + contaBancaria1.saldo);
-
         Scanner scan = new Scanner(System.in);
+        System.out.println("INFORME AGENCIA");
+        contaBancaria1.agencia = scan.next();
+        System.out.println("INFORME CONTA");
+        contaBancaria1.conta = scan.next();
+        System.out.println("INFORME NOME");
+        contaBancaria1.proprietario = scan.next();
+        System.out.println("INFORME DEPOSITO");
+        contaBancaria1.depositar(scan.nextDouble());
+
+        System.out.println("AGENCIA: " + contaBancaria1.agencia + "\n"
+        + "CONTA: " + contaBancaria1.conta + "\n"
+        + "NOME: " + contaBancaria1.proprietario + "\n"
+        + contaBancaria1.consultarSaldo());
+
+        System.out.print("\nINFORME SAQUE: ");
+        contaBancaria1.sacar(scan.nextDouble());
+
+        System.out.println(contaBancaria1.consultarSaldo());
     }
 }
