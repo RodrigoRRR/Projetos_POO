@@ -71,8 +71,9 @@ public class CarroCorrida {
         this.velocidadeAtual += a;
     }
 
-    public void frear(float f) {
-        this.velocidadeAtual -= (this.velocidadeAtual * (f/100));
+    public float frear(float f) {
+        float porcentagem = (f * 100) / this.velocidadeAtual;
+        return porcentagem;
     }
 
     public void parar() {
