@@ -1,14 +1,15 @@
 package bancoBrasil;
 
 public class ContaBancaria {
-    private String agencia, conta, proprietario;
+    private String agencia, conta;
+    Usuario proprietario;
     double saldo;
 
     public ContaBancaria() {
 
     }
 
-    public ContaBancaria(String a, String c, String p, double s) {
+    public ContaBancaria(String a, String c, Usuario p, double s) {
         this.agencia = a;
         this.conta = c;
         this.proprietario = p;
@@ -51,11 +52,11 @@ public class ContaBancaria {
         this.conta = conta;
     }
 
-    public String getProprietario() {
+    public Usuario getProprietario() {
         return proprietario;
     }
 
-    public void setProprietario(String proprietario) {
+    public void setProprietario(Usuario proprietario) {
         this.proprietario = proprietario;
     }
 
