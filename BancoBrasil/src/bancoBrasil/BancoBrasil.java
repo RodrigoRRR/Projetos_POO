@@ -45,22 +45,20 @@ public class BancoBrasil {
 
             switch (opcao) {
                 case 1:
-                    for (int i = 0; i < users.length; i++) {
-                        user = new Usuario();
-                        System.out.println("CADASTRO CLIENTE");
-                        System.out.print("NOME: ");
-                        user.setNome(scan.next());
-                        System.out.print("SOBRENOME: ");
-                        user.setSobrenome(scan.next());
-                        System.out.print("TELEFONE: ");
-                        user.setTelefone(scan.next());
-                        //clientes.add(user);
-                        users[i] = user;
-                    }
+                    user = new Usuario();
+                    System.out.println("CADASTRO CLIENTE");
+                    System.out.print("NOME: ");
+                    user.setNome(scan.next());
+                    System.out.print("SOBRENOME: ");
+                    user.setSobrenome(scan.next());
+                    System.out.print("TELEFONE: ");
+                    user.setTelefone(scan.next());
+                    clientes.add(user);
+                    //users[i] = user;
 
                     break;
                 case 2:
-                    if (users[0] == null) {
+                    if (clientes.isEmpty()) {
                         System.out.println("Nenhum Usuario cadastrado");
                         break;
                     }
@@ -71,16 +69,16 @@ public class BancoBrasil {
                     conta.setConta(scan.next());
                     System.out.println("CLIENTES CADASTRADOS");
 
-                    for (int i = 0; i < users.length; i++) {
-                        System.out.println((i + 1) + " - " + users[i].getNome() + " " + users[i].getSobrenome());
+                    for (int i = 0; i < clientes.size(); i++) {
+                        System.out.println((i + 1) + " - " + clientes.get(i).getNome() + " " + clientes.get(i).getSobrenome());
                     }
 
                     System.out.println("SELECIONE O CLIENTE");
                     int userOpcao = scan.nextInt();
 
-                    for(int j = 0; j < users.length; j++) {
+                    for(int j = 0; j < clientes.size(); j++) {
                         if(userOpcao-1 == j) {
-                            conta.setProprietario(users[userOpcao-1]);
+                            conta.setProprietario(clientes.get(userOpcao-1));
                             exist = true;
                         }
                     }
