@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Usuario {
     private String nome, sobrenome, telefone;
-    private Date dataRegistro = new Date();
+
 
     public Usuario() {
 
@@ -15,9 +15,9 @@ public class Usuario {
         this.sobrenome = s;
         this.telefone = t;
     }
-    String imprimirinfo() {
+    public String imprimirInfo() {
         return String.format("Nome: %s\n Sobrenome: %s\n Telefone: %s\n Data de Registro: %s",
-        this.nome, this.sobrenome, this.telefone, this.dataRegistro);
+        this.nome, this.sobrenome, this.telefone);
     }
 
     public String getNome() {
@@ -42,13 +42,5 @@ public class Usuario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public Date getDataRegistro() {
-        return dataRegistro;
-    }
-
-    public void setDataRegistro(Date dataRegistro) {
-        this.dataRegistro = dataRegistro;
     }
 }
